@@ -15,9 +15,8 @@ birthdays_dict = {(row["month"], row["day"]): row for (index, row) in df.iterrow
 
 import random
 import smtplib
-letter_templates = ["letter_1.txt","letter_2.txt","letter_3.txt"]
+
 if today in birthdays_dict:
-    letter = random.choice(letter_templates)
     person_bd=birthdays_dict[today]
     file_path=f"letter_templates/letter_{random.randint(1,3)}.txt"
     with open(file_path) as reader:
